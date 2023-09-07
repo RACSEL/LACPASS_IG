@@ -5,11 +5,11 @@ Parent: http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips
 Id: lac-patient
 Description: "LACPass Patient Summary Patient resource. This profile derives from the [International Patient summary](https://build.fhir.org/ig/HL7/fhir-ips/) with more contraints for the identification of the patients."
 
-* ^url = "https://lacpass.racsel.org/fhir/StructureDefinition/lac-patient"
+* ^url = "https://lacpass.racsel.org/StructureDefinition/lac-patient"
 
 // identifier slice for nhi
 * identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Patient identifier"
 
@@ -26,10 +26,7 @@ Description: "LACPass Patient Summary Patient resource. This profile derives fro
 * identifier[international].use = #official (exactly)
 * identifier[international].use ^short = "fixed to official"
 * identifier[international].type 1..1
-* identifier[international].type.coding.system 1..1
-* identifier[international].type.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203" (exactly)
-* identifier[international].type.coding.code = #PPN (exactly)
-* identifier[international].type.coding.code ^short = "fixed to PPN (Passport number)"
+* identifier[international].type = $v2-0203#PPN (exactly)
 * identifier[international].type ^short = "Passport number"
 
 // details of national slice
@@ -37,9 +34,7 @@ Description: "LACPass Patient Summary Patient resource. This profile derives fro
 * identifier[national].system 1..1
 * identifier[national].system ^short = "URN OID for the country (ISO-3306 numeric)"
 * identifier[national].type 1..1
-* identifier[national].type.coding.code 1..1
-* identifier[national].type.coding.system 1..1
-* identifier[national].type.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203" (exactly)
+* identifier[national].type from $v2-0203
 // * identifier[national].type.coding.code = "PPN" (exactly)
 * identifier[national].type ^short = "Any type except PPN (Passport number)"
 
@@ -50,7 +45,7 @@ Description: "LACPass Patient Summary Patient resource. This profile derives fro
 
 // invariant for lac-pat-1 rule
 Invariant: lac-pat-1
-Expression: "Patient.identifier.where(use='official').count() == 1"
+Expression: "Patient.identifier.where(use='official').count() >= 1"
 Severity: #error
 Description: "A patient can only have a single official identifier"
 

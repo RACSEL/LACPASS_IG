@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/uv/ips/StructureDefinition/Immunization-uv-ips
 Id: lac-immunization
 Description: "LACPass Patient Summary Immunization resource. This profile derives from the [DDCC Immunization](https://worldhealthorganization.github.io/ddcc/) with different contraints to include other pathologies."
 
-* ^url = "https://lacpass.racsel.org/fhir/StructureDefinition/lac-immunization"
+* ^url = "https://lacpass.racsel.org/StructureDefinition/lac-immunization"
 
 * extension contains DDCCEventBrand named vaccineBrand 1..1 MS
             and DDCCVaccineMarketAuthorization named vaccineMarketAuthorization 0..1 MS
@@ -69,12 +69,12 @@ Description: "LACPass Patient Summary Immunization resource. This profile derive
 Instance: LACImmunizationExample
 InstanceOf: LAC_Immunization
 Usage: #example
-* meta.profile = "https://lacpass.racsel.org/fhir/StructureDefinition/lac-immunization"
-* extension[vaccineBrand].url = "http://lacpass.racsel.org/StructureDefinition/DDCCEventBrand"
-* extension[vaccineBrand].valueCoding = $DDCC-Example-Test-CodeSystem#XM4YL8
-* extension[vaccineMarketAuthorization].url = "http://lacpass.racsel.org/StructureDefinition/DDCCVaccineMarketAuthorization"
+* meta.profile = "https://lacpass.racsel.org/StructureDefinition/lac-immunization"
+* extension[vaccineBrand].url = "https://lacpass.racsel.org/StructureDefinition/DDCCEventBrand"
+* extension[vaccineBrand].valueCoding = $ICD11#XM4YL8
+* extension[vaccineMarketAuthorization].url = "https://lacpass.racsel.org/StructureDefinition/DDCCVaccineMarketAuthorization"
 * extension[vaccineMarketAuthorization].valueCoding = $DDCC-Example-Test-CodeSystem#TEST
-* extension[country].url = "http://lacpass.racsel.org/StructureDefinition/DDCCCountryOfEvent"
+* extension[country].url = "https://lacpass.racsel.org/StructureDefinition/DDCCCountryOfEvent"
 * extension[country].valueCode = #CL
 * status = #completed
 * vaccineCode = $mms#XM9QW8 "COVID-19 vaccine, non-replicating viral vector"
