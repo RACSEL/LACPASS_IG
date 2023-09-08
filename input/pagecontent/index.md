@@ -21,6 +21,7 @@ Most of the resources specified in the official implementation guides are suppor
 | Role  | Name | Organization | Contact |
 | --- | --- | --- | --- |
 | **Primary Editor** | Sergio Peñafiel | CREATE, Chile | sergio@create.cl |
+| Editor | Lucia Grundel |  | luciagrundel@gmail.com |
 | Terminology contributor | Marcelo Cabello | CENS, Chile | mcabello@cens.cl |
 | Reviewer | Fernando Portilla | BID | fportila@gmail.com |
 

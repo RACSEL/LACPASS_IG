@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips
 Id: lac-organization
 Description: "LACPass Patient Summary Organization resource. This profile derives from the [International Patient summary](https://build.fhir.org/ig/HL7/fhir-ips/) with more contraints for the identification of the country of the organization."
 
-* ^url = "https://lacpass.racsel.org/StructureDefinition/lac-organization"
+* ^url = "http://lacpass.racsel.org/StructureDefinition/lac-organization"
 
 // Make organization address country required
 * address 1..1

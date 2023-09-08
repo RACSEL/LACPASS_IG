@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips
 Id: lac-composition
 Description: "LACPass Patient Summary Composition resource. This profile derives from the [International Patient summary](https://build.fhir.org/ig/HL7/fhir-ips/) with customizations for the entries to use the profiles defined in this implementation guide."
 
-* ^url = "https://lacpass.racsel.org/StructureDefinition/lac-compositioin"
+* ^url = "http://lacpass.racsel.org/StructureDefinition/lac-composition"
 
 // Make use of LAC Patient, LAC Immunization and LAC Organization
 * subject 1..1 MS 
@@ -60,7 +60,7 @@ Usage: #example
 * section[sectionImmunizations].code = $loinc#11369-6 "History of Immunization Narrative"
 * section[sectionImmunizations].text.status = #generated
 * section[sectionImmunizations].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">To be populated at future time</div>"
-* section[sectionImmunizations].entry = Reference(LACImmunizationExample)
+* section[sectionImmunizations].entry[immunization] = Reference(LACImmunizationExample)
 
 Instance: 73670837-417b-422f-9f99-46fb28d30985
 InstanceOf: Condition

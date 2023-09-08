@@ -1,11 +1,23 @@
 Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
+Alias: $VS_v2-0203 = http://terminology.hl7.org/ValueSet/v2-0203
+
+ValueSet:      National_Identifier_Type
+Id:	           national-identifier-types
+Title:	       "National Identifier Types"
+Description:   """
+List of national identifier types derived from [HL7 v2-0203](http://terminology.hl7.org/ValueSet/v2-0203)
+"""
+* ^status = #draft
+* include codes from system $v2-0203
+* exclude $v2-0203#PPN "Passport number	"
+
 
 Profile: LAC_Patient
 Parent: http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips
 Id: lac-patient
 Description: "LACPass Patient Summary Patient resource. This profile derives from the [International Patient summary](https://build.fhir.org/ig/HL7/fhir-ips/) with more contraints for the identification of the patients."
 
-* ^url = "https://lacpass.racsel.org/StructureDefinition/lac-patient"
+* ^url = "http://lacpass.racsel.org/StructureDefinition/lac-patient"
 
 // identifier slice for nhi
 * identifier ^slicing.discriminator.type = #value
@@ -34,7 +46,8 @@ Description: "LACPass Patient Summary Patient resource. This profile derives fro
 * identifier[national].system 1..1
 * identifier[national].system ^short = "URN OID for the country (ISO-3306 numeric)"
 * identifier[national].type 1..1
-* identifier[national].type from $v2-0203
+//cambio LUCia
+* identifier[national].type from National_Identifier_Type (required)
 // * identifier[national].type.coding.code = "PPN" (exactly)
 * identifier[national].type ^short = "Any type except PPN (Passport number)"
 
