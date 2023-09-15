@@ -8,7 +8,7 @@ Description: "LACPass ITI-65 Minimal Provide Document Transaction. This profile 
 // Make use of LAC Bundle and LAC Patient
 // * entry[FhirDocuments] 1..1
 * entry[FhirDocuments].resource 1..1
-* entry[FhirDocuments].resource only LAC_Bundle
+* entry[FhirDocuments].resource only LAC_Bundle or LAC_Bundle_DDCC
 
 // * entry[Patient] 1..1
 * entry[Patient].resource 1..1
