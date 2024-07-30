@@ -32,8 +32,8 @@ publisher:
 #     version: 1.0.0
 
 dependencies:
-  hl7.fhir.uv.ips: current
-  ihe.iti.mhd: current
+  hl7.fhir.uv.ips: 1.1.0
+  ihe.iti.mhd: 4.2.2
   # fhir.who.ddcc: current
 
 #
